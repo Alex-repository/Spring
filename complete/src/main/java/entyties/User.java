@@ -11,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
+    private long id;
     private String name;
     private String email;
 
@@ -21,6 +21,10 @@ public class User {
         this.email = email;
     }
 
+    public User() {
+
+
+    }
     /*public long getId() {
         return id;
     }
@@ -33,8 +37,16 @@ public class User {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
