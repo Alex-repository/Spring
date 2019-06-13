@@ -1,4 +1,4 @@
-package entyties;
+package main.java.entyties;
 
 
 import javax.persistence.Entity;

@@ -1,6 +1,7 @@
-package hello;
+package main.java.hello;
 
-import entyties.User;
+import main.java.entyties.User;
+import main.java.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,14 +9,14 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import repositories.UserRepository;
 
 import java.util.stream.Stream;
 
-@ComponentScan("src")
-@EntityScan("entyties")
-@EnableJpaRepositories("repositories")
 @SpringBootApplication
+@ComponentScan(basePackages = ("main.java"))
+@EntityScan("main.java.entyties")
+@EnableJpaRepositories("main.java.repositories")
+
 
 public class Application {
 

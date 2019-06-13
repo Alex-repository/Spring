@@ -1,8 +1,8 @@
-package controller;
+package main.java.controller;
 
-import entyties.User;
+import main.java.entyties.User;
 import org.springframework.web.bind.annotation.*;
-import repositories.UserRepository;
+import main.java.repositories.UserRepository;
 
 import java.util.List;
 
