@@ -1,7 +1,5 @@
 package main.java.hello;
 
-import main.java.entyties.User;
-import main.java.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,13 +23,13 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner init(UserRepository userRepository) {
+    CommandLineRunner init(main.java.repositories.BookRepository bookRepository) {
         return args -> {
-            Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-                User user = new User(name, name.toLowerCase() + "@domain.com");
-                userRepository.save(user);
+            Stream.of("Moby Dick","The Great Gatsby").forEach(name-> {
+                main.java.entyties.Book book = new main.java.entyties.Book(name,"sin descripcion",2000);
+                bookRepository.save(book);
             });
-            userRepository.findAll().forEach(System.out::println);
+            bookRepository.findAll().forEach(System.out::println);
         };
     }
 }
